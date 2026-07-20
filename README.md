@@ -1,5 +1,7 @@
 # Workflows API REST
 
+Learning work : API
+
 ## Description
 Learning project - building a REST API to create and manage employees database. is possible to create employees, create and assign tasks and delete them
 
@@ -15,6 +17,8 @@ Learning project - building a REST API to create and manage employees database. 
 
 
 ## How to start
+
+Need dependencies of python
 
 ### Requirements
 
@@ -53,9 +57,9 @@ DATABASE_URL=postgresql://<user>:<password>@localhost:5432/<database_name>
 ```
 
 Replace :
-- '<user>' with your PostgreSQL username
-- '<password>' with your PostgreSQL password
-- '<database_name>' with your database name
+- `<user>` with your PostgreSQL username
+- `<password>` with your PostgreSQL password
+- `<database_name>` with your database name
 
 ### Start PostgreSQL with Docker
 
@@ -70,6 +74,8 @@ fastapi dev app/main.py
 ```
 
 ## Endpoints
+
+Endpoints
 
 ### Employees
 - POST /employees --> create an employee
