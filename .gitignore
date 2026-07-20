@@ -1,0 +1,5 @@
+venv/
+.env
+sandbox/
+tests/
+projet1_fastapi.md
