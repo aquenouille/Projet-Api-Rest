@@ -1,4 +1,4 @@
-# Workflows API REST
+# Workflows API REST
 
 Learning work : API
 
@@ -73,7 +73,7 @@ docker run --name postgres-dev -e POSTGRES_PASSWORD=<password> -e POSTGRES_USER=
 fastapi dev app/main.py
 ```
 
-## Endpoints
+## Endpoints
 
 Endpoints
 
