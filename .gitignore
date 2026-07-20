@@ -3,3 +3,5 @@ venv/
 sandbox/
 tests/
 projet1_fastapi.md
+__pycache__/
+*.pyc
