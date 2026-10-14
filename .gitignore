@@ -5,4 +5,4 @@ projet1_fastapi.md
 __pycache__/
 *.pyc
 test.db
-.pytest_cache/
+.pytest_cache/*.png
