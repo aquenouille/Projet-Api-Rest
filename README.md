@@ -1,9 +1,9 @@
 # Workflows API REST
 
-Learning work : API
+Learning work : Personal projetct to learn backend devlopment
 
 ## Description
-Learning project - building a REST API to create and manage employees database. is possible to create employees, create and assign tasks and delete them
+Learning project - building a REST API to create and manage employees database. it is possible to create employees, create and assign tasks and delete them
 
 ## Languages and tools 
 
@@ -11,7 +11,7 @@ Learning project - building a REST API to create and manage employees database. 
 - **FastAPI** : framework to build API 
 - **PostgreSQL** : database
 - **SQLAlchemy** : Python package to interact with PostgreSQL
-- **Pydantic** : modele to validate data
+- **Pydantic** : model to validate data
 - **Docker** : run PostgreSQL locally from a terminal
 - **Uvicorn** : web server
 
@@ -30,8 +30,8 @@ Need dependencies of python
 Clone the repository : 
 
 ```bash
-git clone <url> 
-cd projet1_apirest
+git clone https://github.com/aquenouille/Projet-Api-Rest.git
+cd Projet-Api-Rest
 ```
 
 ### Create and activate virtual environment
@@ -43,15 +43,19 @@ source venv/bin/activate
 
 ### Install dependencies
 
-All python libraries used for the API are in teh requirements.txt
+All python libraries used for the API are in the requirements.txt
 ```bash
 pip install -r requirements.txt
 ```
 
 ### Create the .env file
 
-.env is a file that contains hidden informatiosn as password.
-Create it at the root of the project : 
+.env is a file that contains hidden informations as password. 
+Create it at the root of the project :
+```bash
+touch .env
+```
+And write inside :
 ```
 DATABASE_URL=postgresql://<user>:<password>@localhost:5432/<database_name>
 ```
@@ -64,7 +68,7 @@ Replace :
 ### Start PostgreSQL with Docker
 
 ```bash
-docker run --name postgres-dev -e POSTGRES_PASSWORD=<password> -e POSTGRES_USER=<admin> -e POSTGRES_DB=<database_name> -p 5432:5432 -d postgres
+docker run --name postgres-dev -e POSTGRES_PASSWORD=<password> -e POSTGRES_USER=<user> -e POSTGRES_DB=<database_name> -p 5432:5432 -d postgres
 ```
 
 ### Start API
@@ -75,8 +79,6 @@ fastapi dev app/main.py
 
 ## Endpoints
 
-Endpoints
-
 ### Employees
 - POST /employees --> create an employee
 - GET /employees → list all employees
@@ -85,9 +87,21 @@ Endpoints
 ### Tasks
 - POST /tasks/ → create a task and assign it to an employee
 - GET /tasks/employee/{id} → list tasks of an employee
-- PATCH /tasks/{id} → udate task status
+- PATCH /tasks/{id} → update task status
 - DELETE /tasks/{id} → delete a task
 
+## Pytest
+
+Project includes some automated test for all endpoints with employees and tasks 
+
+### Run the tests
+
+```bash
+pytest tests/ -v
+```
+Are tested :
+- Creation, listing and removal of employees and tasks
+- Error (400,404,422)
 
 ## What I learned
 
@@ -97,7 +111,3 @@ Endpoints
 - Separate code into multiple files with inheritance
 - Use Docker to run PostgreSQL locally
 - Test endpoints using the auto-generated /docs interface
-
-## Next steps
-
-- add automated tests with pytest
